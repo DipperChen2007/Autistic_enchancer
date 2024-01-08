@@ -1,39 +1,31 @@
-def Wait_Time (n,lst):
-    person_list = []
-    person_wait_time = []
-    for i in range(n):
-        if lst[i][0] == "R":
-            if (lst[i][1]) not in person_list:
-                person_list.append((lst[i][1]))
-                
-    for i_2 in range(len(person_list)):
-        first_position = lst.index(["R",person_list[i_2]])
-        wait_time = 0
-        
-        while first_position <= n- 1:
-            
-            if lst[first_position][0] == "R":
-                wait_time += 1
-                first_position += 1
-            elif lst[first_position][0] == "S":
-                wait_time += 1
-                first_position += 1
-            elif lst[first_position][0] == "W":
-                wait_time += int(lst[first_position][1])
-                first_position += 2
-        
-        person_wait_time.append(str(wait_time))
-        
-    for i_4 in range(len(person_list)):
-        print(person_list[i_4] + " " + person_wait_time[i_4])
-    
-    
-def Take_input():
-    lst = []
-    n = int(input())
-    for _ in range(n):
-        lst.append(input().split())
-    return n,lst
+def Party_Invitation(party_people,rounds):
 
-n,lst = Take_input()
-Wait_Time (n,lst)
+    for round_position_inlist in rounds:
+        round_position = 0
+        
+        
+        while round_position < len(party_people):
+            round_position += round_position_inlist
+            
+            party_people[round_position] = 0
+        
+        for i in range(len(party_people)):
+            if party_people[i] == 0:
+                party_people.pop(party_people[i])
+    
+    return party_people
+    
+
+def Take_input():
+    person_number = int(input())
+    party_people = []
+    rounds = []
+    for i in range(person_number):
+        party_people.append(i)
+    round_number = int(input())
+    for round_n in range(round_number):
+        rounds.append(int(input()))
+    return party_people, rounds
+
+party_people, rounds = Take_input()
+print(Party_Invitation(party_people,rounds))

@@ -9,6 +9,7 @@ def Happy_Sad (s):
             sa += 1
         else:
             pass
+    
     if ha>sa:
         return "happy"
     elif sa>ha:
