@@ -7,7 +7,6 @@ def check_more_than_a_day(number):
         return day
     else:
         return day
-    
 def check_favourite(number): #2.1
     string_number = str(number)
     if number < 10:
@@ -31,8 +30,7 @@ def check_favourite(number): #2.1
         if string_number == "12.34" or string_number == "11.11":
             return True
         else:
-            return False
-            
+            return False   
 def check_go_up(add_time):
     if add_time > 12:
         if add_time == 12.6:
@@ -45,33 +43,24 @@ def check_go_up(add_time):
         return add_time
     else:
         return add_time 
-
 def Favourite_Times(n): # 
     answer = 0
     day = check_more_than_a_day(n) 
     if day > 0:
-        new_n = n - day * 12 * 60
-        
+        new_n = n - day * 12 * 60 
     else:
         new_n = n
     new_n = new_n / 100 #0.34
     add_time = 12
-    
     while new_n > 0: 
         add_time += 0.01
-        add_time = check_go_up(add_time)
-        
+        add_time = check_go_up(add_time) 
         if check_favourite(add_time) ==  True:
-            answer += 1
-            
+            answer += 1         
         new_n -= 0.01
     return answer
-    
-
-
 def Take_input():
     n = int(input())
     return n 
-
 n = Take_input()
 print(Favourite_Times(n))
