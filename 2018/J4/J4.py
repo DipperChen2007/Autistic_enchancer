@@ -1,6 +1,5 @@
 def check_line(lst):
-
- 
+    
   i = 1
   first = lst[0]
   while i < len(lst):
