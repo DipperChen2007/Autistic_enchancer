@@ -20,4 +20,3 @@ def Take_input():
     return n , s
 
 n,s = Take_input()
-print(Big_Bang_Secrets(n,s))
