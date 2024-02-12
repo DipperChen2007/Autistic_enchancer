@@ -17,7 +17,7 @@ def dfs(start, goal):
         for neigh in neighbours:
             if (neigh not in visited):
                 frontier.append((neigh, current_state[1] + 1))
-                
+            
 def dfs_II(start, goal, N):
     frontier = [start]
     visited = set()
