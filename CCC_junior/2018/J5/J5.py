@@ -17,7 +17,7 @@ def BFS(start,goal,pages):
         else: 
             answer += "N"    
 
-    while frontier != deque([]):
+    while len(frontier) != 0:
         current_state = frontier.pop()
         if current_state[0] not in visited:
             visited.append(current_state[0])
