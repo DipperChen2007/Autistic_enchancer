@@ -14,7 +14,7 @@ def bfs(start,book,N):
     if not finished and neighbours == []:
       distance = curstate[1] + 1
       finished = True
-    
+      
     for neigh in neighbours:
       if(neigh not in visited):
         frontier.append((neigh, curstate[1] + 1))
@@ -27,8 +27,6 @@ def takeInput():
     line = [int(i) for i in input().split()]
     book[i+1] = line[1:]
   return book
-
-
 
 def Choose_your_own_path(N, book):
   visited, distance = bfs(1, book, N)
