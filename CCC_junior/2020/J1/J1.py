@@ -1,6 +1,5 @@
 def Dog_Treats(lst):
-    answer = 0
-    answer = answer + lst[0]*1 + lst[1]*2 + lst[3]*3
+    answer = lst[0] *1 + lst[1]*2 + lst[2]*3
     if answer >= 10:
         return "happy"
     else:
