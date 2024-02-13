@@ -5,7 +5,7 @@ def bfs(start,book,N):
   visited = set()
   distance = 0
   finished = False
-  
+
   while (frontier != []):
     curstate = frontier.popleft()
     visited.add(curstate[0])
