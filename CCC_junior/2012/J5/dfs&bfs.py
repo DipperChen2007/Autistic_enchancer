@@ -50,7 +50,7 @@ def bfs(start, goal):
     frontier = deque([(start, 0)])
     visited = set()
 
-    while (frontier != []):
+    while (len(frontier) != 0):
         current_state = frontier.popleft()
         visited.add(current_state[0])
 
