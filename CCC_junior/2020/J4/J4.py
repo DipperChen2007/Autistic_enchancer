@@ -1,6 +1,6 @@
 def Cyclic_Shifts(str_1,str_2):
     shifts = []
-    for i in range(1,len(str_2)):
+    for i in range(len(str_2)):
         shifts.append(str_2[i:len(str_2)] + str_2[0:i])
     for shift in shifts:
         if shift in str_1:
