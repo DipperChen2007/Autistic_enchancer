@@ -8,6 +8,7 @@ def takeinput():
   col = int(input())
   dictionary = defaultdict(list)
   matrix = []
+  
   for i in range (row):
     line = list(map(int, input().split()))
     for j in range(col):
@@ -18,6 +19,7 @@ def takeinput():
 def BFS(start,goal,dictionary,matrix):
   frontier = deque([(len(matrix),len(matrix[0]))])
   visited = set()
+  
   while len(frontier) != 0:
     current_state = frontier.popleft()
     visited.add(current_state)
