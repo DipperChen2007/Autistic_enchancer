@@ -1,0 +1,16 @@
+from collections import deque
+def BFS(current_state):
+    frontier = [current_state]
+def CCC_Word_Hunt(word,c,r,matrix):
+    pass
+def Take_input():
+    word = input()
+    c = int(input())
+    r = int(input())
+    matrix = []
+    for _ in range(c):
+        matrix.append(list(input().split()))
+    return word,c,r,matrix
+
+word,c,r,matrix = Take_input()
+print(word,c,r,matrix)
