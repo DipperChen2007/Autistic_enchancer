@@ -14,17 +14,31 @@ def BFS(start,goal):
             if neighbour not in visited:
                 frontier.append((neighbour,current_state[1]))
     
-def CCC_Word_Hunt(word,c,r,matrix):
-    pass
+def CCC_Word_Hunt(word,r,c,matrix):
+    answer = 0
+    f_letter = word[0]
+    all_f_letters = []
+    for i in range(r):
+        for j in range(c):
+            if matrix[i][j] == f_letter:
+                all_f_letters.append((i,j))
+    for c in all_f_letters:
+        if BFS(c):
+            answer += 1
+    if word[::-1] == word:
+        answer = answer//2
+        return answer
+    else:
+        return answer
 
 def Take_input():
     word = input()
-    c = int(input())
     r = int(input())
+    c = int(input())
     matrix = []
     for _ in range(c):
         matrix.append(list(input().split()))
-    return word,c,r,matrix
+    return word,r,c,matrix
 
 word,c,r,matrix = Take_input()
 print(word,c,r,matrix)
