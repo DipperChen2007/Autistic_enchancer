@@ -1,8 +1,22 @@
 from collections import deque
-def BFS(current_state):
-    frontier = [current_state]
+def successor(current_s):
+    pass
+def BFS(start,goal):
+    frontier = deque[(start,0)]
+    visited = set()
+    while len(frontier) != 0:
+        current_state = frontier.popleft()
+        visited.add(current_state[0])
+        if current_state[0] == goal:
+            return current_state[1]
+        neighbours = successor(current_state)
+        for neighbour in neighbours:
+            if neighbour not in visited:
+                frontier.append((neighbour,current_state[1]))
+    
 def CCC_Word_Hunt(word,c,r,matrix):
     pass
+
 def Take_input():
     word = input()
     c = int(input())
