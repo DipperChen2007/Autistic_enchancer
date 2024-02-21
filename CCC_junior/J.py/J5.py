@@ -7,8 +7,7 @@ def harvest_value(patch, start_row, start_col):
     
     def dfs(row, col):
         visited[row][col] = True
-        value = 0
-        
+        value = 0    
         if patch[row][col] == 'S':
             value += 1
         elif patch[row][col] == 'M':
